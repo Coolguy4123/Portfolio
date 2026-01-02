@@ -1,6 +1,7 @@
 import Intro from "./components/Intro";
 import GitHubActivity from "./components/GitHubCalendar";
 import ToggleIcon from "./components/ToggleIcon";
+import ProjectSection from "./components/ProjectSection";
 
 const projects = [
   {
@@ -11,6 +12,13 @@ const projects = [
   },
   {
     title: "Project Two",
+    description: "Another project that solves a real problem.",
+    tech: ["React", "API", "UI"],
+    link: "https://github.com/yourname/project-two",
+  },
+  ,
+  {
+    title: "Project Three",
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-two",
@@ -28,7 +36,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="scroll-mt-24 space-y-8">
+        {/* <section id="projects" className="scroll-mt-24 space-y-8">
           <h2 className="text-3xl font-bold">Projects</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -60,7 +68,8 @@ export default function Home() {
               </a>
             ))}
           </div>
-        </section>
+        </section> */}
+        <ProjectSection projects={projects} />
 
         {/* Github contribution graph */}
         <section id="github" className="scroll-mt-28 space-y-6">
