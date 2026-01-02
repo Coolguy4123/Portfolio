@@ -21,8 +21,6 @@ const projects = [
 export default function Home() {
   return (
     <>
-      <Navbar />
-
       {/* Main content */}
       <main className="max-w-5xl mx-auto px-6 py-12 pb-32 space-y-28">
         {/* INTRO */}
