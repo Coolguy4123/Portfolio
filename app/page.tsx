@@ -2,6 +2,7 @@ import Intro from "./components/Intro";
 import GitHubActivity from "./components/GitHubCalendar";
 import ToggleIcon from "./components/ToggleIcon";
 import ProjectSection from "./components/ProjectSection";
+import SkillsSection from "./components/SkillSection";
 
 const projects = [
   {
@@ -30,45 +31,17 @@ export default function Home() {
     <>
       {/* Main content */}
       <main className="max-w-5xl mx-auto px-6 py-12 pb-32 space-y-28">
+
         {/* Intro */}
         <section id="intro" className="scroll-mt-24">
           <Intro />
         </section>
 
-        {/* Projects */}
-        {/* <section id="projects" className="scroll-mt-24 space-y-8">
-          <h2 className="text-3xl font-bold">Projects</h2>
+        {/* Skill section */}
+        <section id="skills" className="scroll-mt-24">
+          <SkillsSection />
+        </section>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((p) => (
-              <a
-                key={p.title}
-                href={p.link}
-                target="_blank"
-                rel="noreferrer"
-                className="border border-zinc-800 rounded-xl p-6 hover:border-zinc-600 transition"
-              >
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold">{p.title}</h3>
-                  <span className="text-zinc-500">↗</span>
-                </div>
-
-                <p className="text-zinc-400 mt-2">{p.description}</p>
-
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-sm border border-zinc-800 rounded-full px-3 py-1 text-zinc-300"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            ))}
-          </div>
-        </section> */}
         <ProjectSection projects={projects} />
 
         {/* Github contribution graph */}
