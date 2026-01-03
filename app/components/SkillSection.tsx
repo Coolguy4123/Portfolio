@@ -135,7 +135,6 @@ export default function SkillsSection() {
       </div>
 
       <div ref={canvasRef} className="relative">
-        {/* SVG sits behind cards */}
         <svg
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 hidden md:block"
@@ -173,7 +172,7 @@ export default function SkillsSection() {
             ))}
           </div>
 
-          {/* Anchor dot ON border */}
+          {/* Anchor dot on border */}
           <span
             ref={coreDotRef}
             aria-hidden="true"
@@ -186,7 +185,7 @@ export default function SkillsSection() {
 
         <div className="h-20" />
 
-        {/* Domain cards */}
+        {/* Domain section */}
         <div className="grid gap-6 md:grid-cols-3">
           {domains.map((d) => {
             const Icon = d.icon;
@@ -194,7 +193,7 @@ export default function SkillsSection() {
 
             return (
               <div key={d.id} className="relative rounded-2xl border border-zinc-700 p-6">
-                {/* Anchor dot ON border */}
+                {/* Anchor dot on border */}
                 <span
                   ref={topDotRef}
                   aria-hidden="true"
