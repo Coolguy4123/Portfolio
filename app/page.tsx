@@ -10,18 +10,22 @@ const projects = [
     description: "Short description of what this project does.",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     link: "https://github.com/yourname/project-one",
+    status: "finished"
   },
   {
     title: "Project Two",
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-two",
+    status: "finished"
   },
   {
     title: "Project Three",
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-three",
+    status: "in_dev",
+    progress: "Polishing UI"
   },
 ];
 
