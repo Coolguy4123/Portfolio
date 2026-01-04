@@ -160,6 +160,9 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
               "group relative rounded-xl border p-6",
               card,
               "focus:outline-none",
+              "transition-all duration-300",
+              "hover:shadow-lg hover:-translate-y-1",
+              ringHover,
             ].join(" ")}
           >
             {/* Status icon */}
@@ -167,7 +170,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
 
             <div className="flex items-start justify-between gap-3 pr-10">
               <div className="space-y-1.5">
-                <h3 className={`text-xl font-semibold ${heading}`}>{p.title}</h3>
+                <h3 className={`text-xl font-semibold ${heading} transition-colors group-hover:text-[rgb(var(--fg))]/80`}>{p.title}</h3>
 
                 <p className={`text-xs ${muted}`}>
                   {statusLabel(p.status)}
@@ -182,7 +185,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
               {p.tech.map((t) => (
                 <span
                   key={t}
-                  className={`text-sm rounded-full px-3 py-1 border ${chip}`}
+                  className={`text-sm rounded-full px-3 py-1 border ${chip} transition-all duration-200 hover:scale-110 hover:border-[rgb(var(--fg))]/50`}
                 >
                   {t}
                 </span>
@@ -208,7 +211,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
                 Code
               </a>
 
-              {p.demo && (
+              {p.demo ? (
                 <a
                   href={p.demo}
                   target="_blank"
@@ -225,7 +228,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
                   <ExternalLink className="h-4 w-4" />
                   Live Demo
                 </a>
-              )}
+              ) : null}
             </div>
           </div>
         ))}
