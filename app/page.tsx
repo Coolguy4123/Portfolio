@@ -17,48 +17,49 @@ const projects = [
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-two",
   },
-  ,
   {
     title: "Project Three",
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
-    link: "https://github.com/yourname/project-two",
+    link: "https://github.com/yourname/project-three",
   },
 ];
 
 export default function Home() {
+  // Theme for light/dark mode 
+  const heading = "text-[rgb(var(--fg))]";
+  const muted = "text-[rgb(var(--muted))]";
+  const border = "border-[rgb(var(--border))]";
+
   return (
     <>
-      {/* Main content */}
       <main className="max-w-5xl mx-auto px-6 py-12 pb-32 space-y-28">
-
         {/* Intro */}
         <section id="intro" className="scroll-mt-24">
           <Intro />
         </section>
 
-        {/* Skill section */}
+        {/* Skills */}
         <section id="skills" className="scroll-mt-24">
           <SkillsSection />
         </section>
 
+        {/* Projects */}
         <ProjectSection projects={projects} />
 
-        {/* Github contribution graph */}
+        {/* GitHub */}
         <section id="github" className="scroll-mt-28 space-y-6">
-          <h2 className="text-3xl font-bold">GitHub Activity</h2>
+          <h2 className={`text-3xl font-bold ${heading}`}>GitHub Activity</h2>
 
-          <p className="text-zinc-400 max-w-2xl">
+          <p className={`${muted} max-w-2xl`}>
             A snapshot of my recent coding activity.
           </p>
 
           <GitHubActivity />
         </section>
 
-    
-
         {/* Footer */}
-        <footer className="pt-12 border-t border-zinc-800 text-zinc-500 text-sm">
+        <footer className={`pt-12 border-t ${border} ${muted} text-sm`}>
           © {new Date().getFullYear()} Freeman
         </footer>
       </main>
