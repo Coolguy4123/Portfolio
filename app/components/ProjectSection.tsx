@@ -16,7 +16,7 @@ type Project = {
   title: string;
   description: string;
   tech: string[];
-  github: string;
+  link: string;
   demo?: string;
   status: ProjectStatus;
   progress?: string;
@@ -195,7 +195,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
             {/* Links */}
             <div className="mt-6 flex items-center gap-3">
               <a
-                href={p.github}
+                href={p.link}
                 target="_blank"
                 rel="noreferrer"
                 className={[
