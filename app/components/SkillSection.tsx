@@ -23,13 +23,13 @@ const coreSkills = [
   "Python",
   "C++",
   "Java",
-  "TypeScript",
   "SQL",
   "Git / GitHub",
   "Linux",
   "Docker",
   "APIs",
   "PostgreSQL",
+  "AWS",
 ];
 
 const domains: Domain[] = [
@@ -45,8 +45,8 @@ const domains: Domain[] = [
       "Feature Engineering",
       "Model Evaluation",
       "Hyperparameter Tuning",
-      "YOLOv8",
       "NLP",
+      "Computer Vision",
     ],
   },
   {
@@ -61,9 +61,10 @@ const domains: Domain[] = [
       "EDA",
       "Matplotlib",
       "Seaborn",
-      "Statistical Modeling",
       "Tableau",
+      "Excel",
       "R",
+      "Statistical Modeling",
     ],
   },
   {
@@ -80,7 +81,6 @@ const domains: Domain[] = [
       "MongoDB",
       "ROS 2",
       "System Integration",
-      "AWS",
     ],
   },
 ];
@@ -208,7 +208,7 @@ export default function SkillsSection() {
           <span
             ref={coreDotRef}
             aria-hidden="true"
-            className={`hidden md:block absolute left-1/2 -bottom-[6px] h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
+            className={`hidden md:block absolute left-1/2 -bottom-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
           />
         </div>
 
@@ -226,7 +226,7 @@ export default function SkillsSection() {
                 <span
                   ref={topDotRef}
                   aria-hidden="true"
-                  className={`hidden md:block absolute left-1/2 -top-[6px] h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
+                  className={`hidden md:block absolute left-1/2 -top-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
                 />
 
                 <div className="flex items-center gap-3">
