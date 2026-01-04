@@ -17,7 +17,8 @@ const projects = [
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-two",
-    status: "finished"
+    status: "finished",
+    demo: "https://github.com/yourname/project-two"
   },
   {
     title: "Project Three",

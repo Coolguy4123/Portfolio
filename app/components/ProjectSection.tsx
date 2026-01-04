@@ -4,9 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
   CheckCircle2,
   Wrench,
+  Github,
+  ExternalLink,
 } from "lucide-react";
 
 type ProjectStatus = "finished" | "in_dev";
@@ -15,7 +16,8 @@ type Project = {
   title: string;
   description: string;
   tech: string[];
-  link: string;
+  github: string;
+  demo?: string;
   status: ProjectStatus;
   progress?: string;
 };
@@ -152,16 +154,12 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
       {/* Cards */}
       <div className="grid gap-6 md:grid-cols-2">
         {visible.map((p) => (
-          <a
+          <div
             key={p.title}
-            href={p.link}
-            target="_blank"
-            rel="noreferrer"
             className={[
               "group relative rounded-xl border p-6",
               card,
-              ringHover,
-              "focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--fg))]/20",
+              "focus:outline-none",
             ].join(" ")}
           >
             {/* Status icon */}
@@ -190,7 +188,46 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
                 </span>
               ))}
             </div>
-          </a>
+
+            {/* Links */}
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noreferrer"
+                className={[
+                  "inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium",
+                  "transition-colors",
+                  card,
+                  ringHover,
+                  muted,
+                  "hover:text-[rgb(var(--fg))]",
+                ].join(" ")}
+              >
+                <Github className="h-4 w-4" />
+                Code
+              </a>
+
+              {p.demo && (
+                <a
+                  href={p.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={[
+                    "inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium",
+                    "transition-colors",
+                    card,
+                    ringHover,
+                    muted,
+                    "hover:opacity-90",
+                  ].join(" ")}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Live Demo
+                </a>
+              )}
+            </div>
+          </div>
         ))}
       </div>
 
