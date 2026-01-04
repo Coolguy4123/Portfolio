@@ -25,9 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="min-h-screen">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
+
     </html>
   )
 }
