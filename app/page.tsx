@@ -6,10 +6,10 @@ import SkillsSection from "./components/SkillSection";
 
 const projects = [
   {
-    title: "Project One",
-    description: "Short description of what this project does.",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    link: "https://github.com/yourname/project-one",
+    title: "C++ Battleship",
+    description: "CLI Battleship game that utilizes advanced data structures, algorithms, and OOP principles",
+    tech: ["C++", "Apache Netbeans"],
+    link: "https://github.com/Coolguy4123/Project1BattleShipV2",
     status: "finished"
   },
   {
