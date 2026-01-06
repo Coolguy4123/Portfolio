@@ -13,7 +13,7 @@ const projects = [
     status: "finished"
   },
   {
-    title: "Project Two",
+    title: "Diabetes Classifier",
     description: "Another project that solves a real problem.",
     tech: ["React", "API", "UI"],
     link: "https://github.com/yourname/project-two",
