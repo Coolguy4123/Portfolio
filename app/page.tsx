@@ -14,8 +14,8 @@ const projects = [
   },
   {
     title: "Diabetes Classifier",
-    description: "Another project that solves a real problem.",
-    tech: ["React", "API", "UI"],
+    description: "A ML project that classifies whether a person has diabetes or not based on their medical input",
+    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Seaborn", "Streamlit"],
     link: "https://github.com/yourname/project-two",
     status: "finished",
     demo: "https://github.com/yourname/project-two"
