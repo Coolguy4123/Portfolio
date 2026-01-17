@@ -89,20 +89,6 @@ export default function ContactInfo() {
               <Send className="h-4 w-4" />
               Send message
             </button>
-
-            {/* Fallback direct email */}
-            {/* <a
-              href="mailto:yourresumeemail@gmail.com"
-              className={[
-                "inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm",
-                card,
-                muted,
-                ringHover,
-              ].join(" ")}
-            >
-              <Mail className="h-4 w-4" />
-              Email me directly
-            </a> */}
           </div>
         </form>
       </div>
