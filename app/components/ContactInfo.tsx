@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 export default function ContactInfo() {
   // Constant theme tokens 
