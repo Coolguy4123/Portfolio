@@ -3,6 +3,7 @@ import GitHubActivity from "./components/GitHubCalendar";
 import ToggleIcon from "./components/ToggleIcon";
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillSection";
+import ContactInfo from "./components/ContactInfo";
 
 const projects = [
   {
@@ -57,11 +58,13 @@ export default function Home() {
           <h2 className={`text-3xl font-bold ${heading}`}>GitHub Activity</h2>
 
           <p className={`${muted} max-w-2xl`}>
-            A snapshot of my recent coding activity.
+            My recent coding activity on GitHub
           </p>
 
           <GitHubActivity />
         </section>
+
+        <ContactInfo/>
 
         {/* Footer */}
         <footer className={`pt-12 border-t ${border} ${muted} text-sm`}>
