@@ -25,12 +25,12 @@ export default function Intro() {
 
       <div className="flex gap-3 pt-2">
         
-        <a
+        {/* <a
           href="#projects"
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
           View Projects
-        </a>
+        </a> */}
 
         <a
           href="https://github.com/Coolguy4123"
@@ -40,7 +40,8 @@ export default function Intro() {
         >
           GitHub
         </a>
-
+        
+        
         <a
           href="https://www.linkedin.com/in/freeman-yiu-3ab0261a5/"
           target="_blank"
@@ -48,6 +49,20 @@ export default function Intro() {
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
           LinkedIn
+        </a>
+
+        <span
+          aria-hidden="true"
+          className="h-10 w-px bg-[rgb(var(--fg))] opacity-60"
+        />
+
+        <a
+          href="/Freeman_ML_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
+        >
+          Resume
         </a>
 
       </div>
