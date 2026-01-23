@@ -22,12 +22,12 @@ const projects = [
     demo: "https://github.com/yourname/project-two"
   },
   {
-    title: "Project Three",
-    description: "Another project that solves a real problem.",
-    tech: ["React", "API", "UI"],
+    title: "YouTube Comments Sentiment Analysis",
+    description: "Analyzyes YouTube Comments based on URL",
+    tech: ["Python", "NLP", "Streamlit"],
     link: "https://github.com/yourname/project-three",
-    status: "in_dev",
-    progress: "Polishing UI"
+    status: "finished",
+    // progress: "Polishing UI"
   },
 ];
 
