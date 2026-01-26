@@ -29,6 +29,14 @@ const projects = [
     status: "finished",
     // progress: "Polishing UI"
   },
+  {
+    title: "YouTube Comments Sentiment Analysis",
+    description: "Tmp",
+    tech: ["Python"],
+    link: "https://github.com/yourname/project-four",
+    status: "finished",
+    // progress: "Polishing UI"
+  },
 ];
 
 export default function Home() {
