@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -72,10 +72,6 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
 
-  useEffect(() => {
-    setPage(0);
-  }, [filter]);
-
   const visible = useMemo(() => {
     const start = page * pageSize;
     return filtered.slice(start, start + pageSize);
@@ -87,9 +83,12 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
   const filterButton = (value: Filter, label: string) => {
     const active = filter === value;
     return (
-      <button
+        <button
         type="button"
-        onClick={() => setFilter(value)}
+        onClick={() => {
+          setFilter(value);
+          setPage(0);
+        }}
         className={[
           "rounded-full border px-3 py-1 text-sm",
           active
@@ -156,6 +155,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
             {filter !== "all"
               ? ` • ${filter === "finished" ? "Finished" : "In Development"}`
               : ""}
+            {filtered.length > pageSize ? ` • Page ${page + 1} of ${totalPages}` : ""}
           </p>
 
           {/* Filters */}
@@ -268,6 +268,19 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
             </div>
           </article>
         ))}
+
+        {visible.length === 0 && (
+          <div
+            className={[
+              "rounded-xl border p-6",
+              card,
+              muted,
+              "lg:col-span-2",
+            ].join(" ")}
+          >
+            No projects match this filter yet.
+          </div>
+        )}
       </div>
 
       {/* Page dots (Only works in larger screens) */}
