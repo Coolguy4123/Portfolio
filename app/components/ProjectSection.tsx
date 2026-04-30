@@ -12,7 +12,7 @@ import {
 
 type ProjectStatus = "finished" | "in_dev";
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
   tech: string[];
@@ -71,6 +71,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
   }, [projects, filter]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const showSlider = filtered.length > pageSize;
 
   const visible = useMemo(() => {
     const start = page * pageSize;
@@ -102,8 +103,6 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
     );
   };
 
-  const arrowsDisabled = filtered.length <= pageSize;
-
   return (
     <section id="projects" className="scroll-mt-24 space-y-6">
       {/* Header */}
@@ -113,39 +112,37 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
             <h2 className={`text-3xl font-bold ${heading}`}>Projects</h2>
 
             {/* Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={prev}
-                aria-label="Previous projects"
-                className={[
-                  "rounded-lg border px-3 py-2 text-sm",
-                  card,
-                  muted,
-                  ringHover,
-                  "disabled:opacity-50 disabled:cursor-not-allowed",
-                ].join(" ")}
-                disabled={arrowsDisabled}
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </button>
+            {showSlider ? (
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={prev}
+                  aria-label="Previous projects"
+                  className={[
+                    "rounded-lg border px-3 py-2 text-sm",
+                    card,
+                    muted,
+                    ringHover,
+                  ].join(" ")}
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
 
-              <button
-                type="button"
-                onClick={next}
-                aria-label="Next projects"
-                className={[
-                  "rounded-lg border px-3 py-2 text-sm",
-                  card,
-                  muted,
-                  ringHover,
-                  "disabled:opacity-50 disabled:cursor-not-allowed",
-                ].join(" ")}
-                disabled={arrowsDisabled}
-              >
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
+                <button
+                  type="button"
+                  onClick={next}
+                  aria-label="Next projects"
+                  className={[
+                    "rounded-lg border px-3 py-2 text-sm",
+                    card,
+                    muted,
+                    ringHover,
+                  ].join(" ")}
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            ) : null}
           </div>
 
           <p className={`text-sm ${muted}`}>
@@ -155,7 +152,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
             {filter !== "all"
               ? ` • ${filter === "finished" ? "Finished" : "In Development"}`
               : ""}
-            {filtered.length > pageSize ? ` • Page ${page + 1} of ${totalPages}` : ""}
+            {showSlider ? ` • Page ${page + 1} of ${totalPages}` : ""}
           </p>
 
           {/* Filters */}
@@ -168,7 +165,7 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
       </div>
 
       {/* Cards */}
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="space-y-6">
         {visible.map((p) => (
           <article
             key={p.title}
@@ -275,7 +272,6 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
               "rounded-xl border p-6",
               card,
               muted,
-              "lg:col-span-2",
             ].join(" ")}
           >
             No projects match this filter yet.
@@ -283,26 +279,27 @@ export default function ProjectSection({ projects }: { projects: Project[] }) {
         )}
       </div>
 
-      {/* Page dots (Only works in larger screens) */}
-      <div className="flex justify-center gap-2 pt-2">
-        {Array.from({ length: totalPages }).map((_, i) => {
-          const isActive = i === page;
-          return (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setPage(i)}
-              aria-label={`Go to page ${i + 1}`}
-              className={[
-                "h-2 w-2 rounded-full border",
-                isActive
-                  ? "bg-[rgb(var(--fg))] border-[rgb(var(--fg))]"
-                  : "bg-transparent border-[rgb(var(--border))] hover:border-[rgb(var(--fg))]/30",
-              ].join(" ")}
-            />
-          );
-        })}
-      </div>
+      {showSlider ? (
+        <div className="flex justify-center gap-2 pt-2">
+          {Array.from({ length: totalPages }).map((_, i) => {
+            const isActive = i === page;
+            return (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setPage(i)}
+                aria-label={`Go to page ${i + 1}`}
+                className={[
+                  "h-2 w-2 rounded-full border",
+                  isActive
+                    ? "bg-[rgb(var(--fg))] border-[rgb(var(--fg))]"
+                    : "bg-transparent border-[rgb(var(--border))] hover:border-[rgb(var(--fg))]/30",
+                ].join(" ")}
+              />
+            );
+          })}
+        </div>
+      ) : null}
     </section>
   );
 }
