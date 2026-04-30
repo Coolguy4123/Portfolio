@@ -2,7 +2,7 @@ import Intro from "./components/Intro";
 import GitHubActivity from "./components/GitHubCalendar";
 import ToggleIcon from "./components/ToggleIcon";
 import ProjectSection from "./components/ProjectSection";
-import type { Project } from "./components/ProjectSection";
+import type { Project } from "./components/project-types";
 import SkillsSection from "./components/SkillSection";
 import ContactInfo from "./components/ContactInfo";
 

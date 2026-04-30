@@ -9,18 +9,7 @@ import {
   Github,
   ExternalLink,
 } from "lucide-react";
-
-type ProjectStatus = "finished" | "in_dev";
-
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  link: string;
-  demo?: string;
-  status: ProjectStatus;
-  progress?: string;
-};
+import type { Project, ProjectStatus } from "./project-types";
 
 type Filter = "all" | ProjectStatus;
 
