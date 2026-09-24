@@ -173,7 +173,7 @@ export default function SkillsSection() {
       <div ref={canvasRef} className="relative">
         <svg
           aria-hidden="true"
-          className={`pointer-events-none absolute inset-0 hidden md:block ${line}`}
+          className={`pointer-events-none absolute inset-0 hidden lg:block ${line}`}
           width={svgSize.w}
           height={svgSize.h}
         >
@@ -204,14 +204,22 @@ export default function SkillsSection() {
           <span
             ref={coreDotRef}
             aria-hidden="true"
-            className={`hidden md:block absolute left-1/2 -bottom-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
+            className={`hidden lg:block absolute left-1/2 -bottom-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
           />
         </div>
 
-        <div className="h-20" />
+        <div className="flex items-center gap-3 py-8 lg:hidden" aria-hidden="true">
+          <span className="h-px flex-1 bg-[rgb(var(--border))]" />
+          <span className={`text-xs uppercase tracking-[0.18em] ${muted}`}>
+            Areas I work in
+          </span>
+          <span className="h-px flex-1 bg-[rgb(var(--border))]" />
+        </div>
+
+        <div className="hidden h-20 lg:block" />
 
         {/* Domain cards */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {domains.map((d) => {
             const Icon = d.icon;
             const topDotRef = dotRefs[d.id];
@@ -222,7 +230,7 @@ export default function SkillsSection() {
                 <span
                   ref={topDotRef}
                   aria-hidden="true"
-                  className={`hidden md:block absolute left-1/2 -top-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
+                  className={`hidden lg:block absolute left-1/2 -top-1.5 h-3 w-3 -translate-x-1/2 rounded-full border ${card}`}
                 />
 
                 <div className="flex items-center gap-3">

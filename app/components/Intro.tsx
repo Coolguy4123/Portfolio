@@ -53,7 +53,7 @@ export default function Intro() {
           href="#projects"
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
-          View Projects
+          View Personal Projects
         </a>
 
         <a
