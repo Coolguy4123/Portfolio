@@ -2,13 +2,13 @@
 
 import { GitHubCalendar } from "react-github-calendar";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 export default function GitHubActivity() {
     const { resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => setMounted(true), []);
+    const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
     if (!mounted) return null;
 

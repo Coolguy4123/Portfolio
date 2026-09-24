@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Brain, BarChart3, Code2, Layers } from "lucide-react";
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Bot, Brain, Code2, Layers } from "lucide-react";
 
-type DomainId = "ml" | "ds" | "swe";
+type DomainId = "autonomy" | "mlData" | "swe";
 
 type Domain = {
   id: DomainId;
@@ -27,44 +27,40 @@ const coreSkills = [
   "Git / GitHub",
   "Linux",
   "Docker",
-  "APIs",
-  "PostgreSQL",
   "AWS",
 ];
 
 const domains: Domain[] = [
   {
-    id: "ml",
-    title: "Machine Learning",
+    id: "autonomy",
+    title: "Robotics & Autonomy",
+    icon: Bot,
+    items: [
+      "Autonomous Vehicles",
+      "Robotics",
+      "ROS 2",
+      "Computer Vision",
+      "Sensor Fusion",
+      "Path Planning",
+      "System Integration",
+    ],
+  },
+  {
+    id: "mlData",
+    title: "ML & Data Science",
     icon: Brain,
     items: [
       "Scikit-learn",
       "PyTorch",
       "TensorFlow",
       "Hugging Face",
-      "Feature Engineering",
-      "Model Evaluation",
-      "Hyperparameter Tuning",
-      "NLP",
-      "Computer Vision",
-    ],
-  },
-  {
-    id: "ds",
-    title: "Data Science",
-    icon: BarChart3,
-    items: [
       "Pandas",
       "NumPy",
-      "SQL",
-      "Data Cleaning",
       "EDA",
-      "Matplotlib",
-      "Seaborn",
-      "Tableau",
-      "Excel",
-      "R",
+      "Feature Engineering",
+      "Model Evaluation",
       "Statistical Modeling",
+      "NLP",
     ],
   },
   {
@@ -79,8 +75,8 @@ const domains: Domain[] = [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "ROS 2",
-      "System Integration",
+      "PostgreSQL",
+      "REST APIs",
     ],
   },
 ];
@@ -89,14 +85,14 @@ export default function SkillsSection() {
   const canvasRef = useRef<HTMLDivElement | null>(null);
 
   const coreDotRef = useRef<HTMLSpanElement | null>(null);
-  const mlDotRef = useRef<HTMLSpanElement | null>(null);
-  const dsDotRef = useRef<HTMLSpanElement | null>(null);
+  const autonomyDotRef = useRef<HTMLSpanElement | null>(null);
+  const mlDataDotRef = useRef<HTMLSpanElement | null>(null);
   const sweDotRef = useRef<HTMLSpanElement | null>(null);
 
   const dotRefs = useMemo(
     () => ({
-      ml: mlDotRef,
-      ds: dsDotRef,
+      autonomy: autonomyDotRef,
+      mlData: mlDataDotRef,
       swe: sweDotRef,
     }),
     []
@@ -105,7 +101,7 @@ export default function SkillsSection() {
   const [svgSize, setSvgSize] = useState({ w: 0, h: 0 });
   const [paths, setPaths] = useState<string[]>([]);
 
-  const compute = () => {
+  const compute = useCallback(() => {
     const canvas = canvasRef.current;
     const core = coreDotRef.current;
     if (!canvas || !core) return;
@@ -140,11 +136,11 @@ export default function SkillsSection() {
     });
 
     setPaths(newPaths);
-  };
+  }, [dotRefs]);
 
   useLayoutEffect(() => {
     compute();
-  }, []);
+  }, [compute]);
 
   useEffect(() => {
     compute();
@@ -159,7 +155,7 @@ export default function SkillsSection() {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
     };
-  }, []);
+  }, [compute]);
 
   // Theme color for light/dark mode
   const card = "bg-[rgb(var(--card))] border-[rgb(var(--border))]";

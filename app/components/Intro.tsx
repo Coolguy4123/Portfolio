@@ -1,13 +1,15 @@
 import Image from "next/image";
 
 export default function Intro() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   return (
     <section
       id="intro"
       className="flex flex-col items-center text-center space-y-6 pt-16"
     >
       <Image
-        src="/Head.jpeg"
+        src={`${basePath}/Head.jpeg`}
         alt="Freeman's profile picture"
         width={200}
         height={200}
@@ -22,13 +24,19 @@ export default function Intro() {
         </h1>
 
         <p className="max-w-2xl text-lg text-[rgb(var(--fg))]">
-          I build practical machine learning and software projects that turn
-          data, user needs, and technical ideas into clear, working products.
+          I build intelligent systems at the intersection of autonomous
+          vehicles, robotics, machine learning, and software engineering.
         </p>
 
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-[rgb(var(--muted))]">
+        <span className="rounded-full border border-zinc-700 px-3 py-1">
+          Autonomous Vehicles
+        </span>
+        <span className="rounded-full border border-zinc-700 px-3 py-1">
+          Robotics
+        </span>
         <span className="rounded-full border border-zinc-700 px-3 py-1">
           Machine Learning
         </span>
@@ -72,7 +80,7 @@ export default function Intro() {
         />
 
         <a
-          href="/Freeman_ML_Resume.pdf"
+          href={`${basePath}/Freeman_ML_Resume.pdf`}
           target="_blank"
           rel="noreferrer"
           className="rounded-lg border border-zinc-700 px-4 py-2 transition hover:border-zinc-500"

@@ -1,36 +1,35 @@
-# Portfolio website using Next.js
+# Freeman Yiu — Portfolio
 
-## Getting Started
+A Next.js portfolio focused on autonomous vehicles, robotics, machine learning,
+data science, and software engineering.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to GitHub Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site is configured as a static Next.js export and deploys automatically from
+`main` with `.github/workflows/deploy-pages.yml`.
 
-## Learn More
+1. Push the repository to `Coolguy4123/Portfolio`.
+2. In the GitHub repository, open **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Run the workflow or push to `main`.
 
-To learn more about Next.js, take a look at the following resources:
+The published URL will be `https://coolguy4123.github.io/Portfolio/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For a different repository name, update `NEXT_PUBLIC_BASE_PATH` in the workflow.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Production build
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The static site is generated in `out/`.

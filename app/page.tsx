@@ -11,7 +11,7 @@ const projects: Project[] = [
     title: "C++ Battleship",
     description:
       "CLI Battleship game built with object-oriented design, custom data structures, and game-state validation.",
-    tech: ["C++", "Apache Netbeans"],
+    tech: ["C++", "Object-Oriented Programming", "Data Structures"],
     link: "https://github.com/Coolguy4123/Project1BattleShipV2",
     status: "finished",
   },
