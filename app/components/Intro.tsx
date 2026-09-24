@@ -24,8 +24,8 @@ export default function Intro() {
         </h1>
 
         <p className="max-w-2xl text-lg text-[rgb(var(--fg))]">
-          I build intelligent systems at the intersection of autonomous
-          vehicles, robotics, machine learning, and software engineering.
+          Building intelligent systems at the intersection of autonomous
+          vehicles, robotics, machine learning, and software engineering
         </p>
 
       </div>

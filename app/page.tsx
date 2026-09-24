@@ -5,6 +5,7 @@ import ProjectSection from "./components/ProjectSection";
 import type { Project } from "./components/project-types";
 import SkillsSection from "./components/SkillSection";
 import ContactInfo from "./components/ContactInfo";
+import ExperienceSection from "./components/ExperienceSection";
 
 const projects: Project[] = [
   {
@@ -63,6 +64,9 @@ export default function Home() {
         <section id="intro" className="scroll-mt-24">
           <Intro />
         </section>
+
+        {/* Experience */}
+        <ExperienceSection />
 
         {/* Skills */}
         <section id="skills" className="scroll-mt-24">
