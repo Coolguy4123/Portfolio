@@ -50,19 +50,12 @@ export default function Intro() {
 
       <div className="flex flex-wrap justify-center gap-3 pt-2">
         <a
-          href="#projects"
-          className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
-        >
-          View Personal Projects
-        </a>
-
-        <a
           href="https://github.com/Coolguy4123"
           target="_blank"
           rel="noreferrer"
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
-          View GitHub
+          GitHub
         </a>
 
         <a
