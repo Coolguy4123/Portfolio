@@ -80,7 +80,7 @@ export default function Intro() {
         />
 
         <a
-          href={`${basePath}/Freeman_ML_Resume.pdf`}
+          href={`${basePath}/Freeman_Yiu_Resume.pdf`}
           target="_blank"
           rel="noreferrer"
           className="rounded-lg border border-zinc-700 px-4 py-2 transition hover:border-zinc-500"
