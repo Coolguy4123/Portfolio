@@ -15,22 +15,38 @@ export default function Intro() {
         priority
       />
 
-      <h1 className="text-4xl md:text-5xl font-bold">
-        Hello, I’m Freeman
-      </h1>
+      <div className="space-y-3">
 
-      <p className="text-zinc-400 max-w-xl text-lg">
-        Undergrad Computer Science, interested in Machine learning, Data Science and Software Engineering
-      </p>
+        <h1 className="text-4xl font-bold md:text-5xl">
+          Freeman Yiu
+        </h1>
 
-      <div className="flex gap-3 pt-2">
-        
-        {/* <a
+        <p className="max-w-2xl text-lg text-[rgb(var(--fg))]">
+          I build practical machine learning and software projects that turn
+          data, user needs, and technical ideas into clear, working products.
+        </p>
+
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-[rgb(var(--muted))]">
+        <span className="rounded-full border border-zinc-700 px-3 py-1">
+          Machine Learning
+        </span>
+        <span className="rounded-full border border-zinc-700 px-3 py-1">
+          Data Science
+        </span>
+        <span className="rounded-full border border-zinc-700 px-3 py-1">
+          Software Engineering
+        </span>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-3 pt-2">
+        <a
           href="#projects"
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
           View Projects
-        </a> */}
+        </a>
 
         <a
           href="https://github.com/Coolguy4123"
@@ -38,10 +54,9 @@ export default function Intro() {
           rel="noreferrer"
           className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
         >
-          GitHub
+          View GitHub
         </a>
-        
-        
+
         <a
           href="https://www.linkedin.com/in/freeman-yiu-3ab0261a5/"
           target="_blank"
@@ -53,18 +68,17 @@ export default function Intro() {
 
         <span
           aria-hidden="true"
-          className="h-10 w-px bg-[rgb(var(--fg))] opacity-60"
+          className="hidden h-10 w-px bg-[rgb(var(--fg))] opacity-60 md:block"
         />
 
         <a
           href="/Freeman_ML_Resume.pdf"
           target="_blank"
           rel="noreferrer"
-          className="border border-zinc-700 rounded-lg px-4 py-2 hover:border-zinc-500 transition"
+          className="rounded-lg border border-zinc-700 px-4 py-2 transition hover:border-zinc-500"
         >
-          Resume
+          View Resume
         </a>
-
       </div>
     </section>
   );
